@@ -5,12 +5,8 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    var solution = new TwoSum();
-    var result = solution.Solve(new[] { 2, 7, 11, 15 }, 9);
-    
-    Console.WriteLine("測試 Two Sum:");
-    Console.WriteLine($"輸入: nums = [2,7,11,15], target = 9");
-    Console.WriteLine($"輸出: [{string.Join(",", result)}]");
+    var solution = new BinarySearch();
+    var result = solution.Solve(new[] { 5 }, 5);
 }
 catch (Exception ex)
 {

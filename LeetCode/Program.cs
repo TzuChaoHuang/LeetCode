@@ -5,8 +5,8 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    var solution = new BinarySearch();
-    var result = solution.Solve(new[] { 5 }, 5);
+    var solution = new RemoveElement();
+    var result = solution.Solve(new[] { 3}, 3);
 }
 catch (Exception ex)
 {

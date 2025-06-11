@@ -5,8 +5,8 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    var solution = new SpiralMatrix();
-    var result = solution.Solve(new int[][] { [2,5,8],[4,0,-1]});
+    var solution = new SpiralMatrix2();
+    var result = solution.Solve(4);
 }
 catch (Exception ex)
 {

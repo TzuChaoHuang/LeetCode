@@ -5,8 +5,10 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    var solution = new SpiralMatrix2();
-    var result = solution.Solve(4);
+    var solution = new RemoveLinekedListElements();
+    //[1,2,6,3,4,5,6]
+    var result = solution.Solve(new ListNode(1,new ListNode(2,new ListNode(6,new ListNode(3,new ListNode(4,new ListNode(5,new ListNode(6))))))), 6);
+    
 }
 catch (Exception ex)
 {

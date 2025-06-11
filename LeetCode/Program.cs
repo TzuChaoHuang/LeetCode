@@ -5,8 +5,8 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    var solution = new RemoveElement();
-    var result = solution.Solve(new[] { 3}, 3);
+    var solution = new SquaresOfASortedArray();
+    var result = solution.Solve(new[] { -5,-3,-2,-1});
 }
 catch (Exception ex)
 {

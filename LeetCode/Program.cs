@@ -5,8 +5,8 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    var solution = new SquaresOfASortedArray();
-    var result = solution.Solve(new[] { -5,-3,-2,-1});
+    var solution = new MinimumSizeSubarraySum();
+    var result = solution.Solve(7, new[] { 2, 3, 1, 2, 4, 3 });
 }
 catch (Exception ex)
 {

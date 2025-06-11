@@ -5,8 +5,8 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    var solution = new MinimumSizeSubarraySum();
-    var result = solution.Solve(7, new[] { 2, 3, 1, 2, 4, 3 });
+    var solution = new SpiralMatrix();
+    var result = solution.Solve(new int[][] { [2,5,8],[4,0,-1]});
 }
 catch (Exception ex)
 {

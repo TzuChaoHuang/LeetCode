@@ -5,18 +5,8 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    DesignLinkedList obj = new DesignLinkedList();
-    var get = obj.Get(0);
-    obj.AddAtHead(1);
-    obj.DeleteAtIndex(0);
-    obj.AddAtTail(3);
-    obj.AddAtIndex(1, 2);
-    var get1 = obj.Get(1);
-    var get2 = obj.Get(3);
-    obj.DeleteAtIndex(1);
-    var get3 = obj.Get(1);
-
-    
+    var solution = new ReverseLinkedList();
+    solution.Solve(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4)))));
 }
 catch (Exception ex)
 {

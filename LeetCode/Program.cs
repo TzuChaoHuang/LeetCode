@@ -5,8 +5,7 @@ Console.WriteLine("LeetCode 解題測試程式");
 
 try
 {
-    var solution = new LinkedListCycle();
-    solution.Solve(new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1,new ListNode(1))))));
+    
 }
 catch (Exception ex)
 {

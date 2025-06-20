@@ -1,13 +1,13 @@
 namespace LeetCode.Solutions;
 
-public class ReversString
+public class ReverseString
 {
     /// <summary>
     /// Write a function that reverses a string. The input string is given as an array of characters s.
     /// https://leetcode.com/problems/reverse-string/description/
     /// </summary>
     /// <param name="s"></param>
-    public void ReverseString(char[] s)
+    public void Solve(char[] s)
     {
         // use two pointer to swap the char
         int left = 0;

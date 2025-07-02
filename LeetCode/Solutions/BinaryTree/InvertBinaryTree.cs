@@ -1,31 +1,24 @@
 namespace LeetCode.Solutions;
 
+/// <summary>
+/// Given the root of a binary tree, invert the tree, and return its root.
+/// https://leetcode.com/problems/invert-binary-tree/description/
+/// </summary>
 public class InvertBinaryTree
 {
     public TreeNode Solve(TreeNode root)
     {
-        swip(root);
+        Swap(root);
         return root;
     }
-    public void swip(TreeNode root)
+    public void Swap(TreeNode root)
     {
         if (root == null)
             return;
-        if (root.right != null && root.left != null)
-        {
-            TreeNode node1 = root.left;
-            TreeNode node2 = root.right;
-            root.left = node1.val > node2.val ? node1 : node2;
-            root.right = node1.val > node2.val ? node2 : node1;
-        }
-        else if (root.left == null && root.right != null)
-        {
-            root.left = root.right;
-            root.right = null;
-        }
-        if (root.left != null)
-            swip(root.left);
-        if (root.right != null)
-            swip(root.right);
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        Swap(root.left);
+        Swap(root.right);
     }
 }

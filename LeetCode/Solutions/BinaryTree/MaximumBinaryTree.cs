@@ -2,30 +2,48 @@ using System.Globalization;
 
 namespace LeetCode.Solutions;
 
+/// <summary>
+/// You are given an integer array nums with no duplicates. A maximum binary tree can be built recursively from nums using the following algorithm
+/// https://leetcode.com/problems/maximum-binary-tree/description/
+/// </summary>
 public class MaximumBinaryTree
 {
-   public TreeNode ConstructMaximumBinaryTree(int[] nums) {
-        if (nums.Length == 0)
-        {
-            return null;
-        }
-        var root = new TreeNode(nums.Max());
-        var rootIndex = Array.IndexOf(nums, root.val);
-        root.left = ConstructMaximumBinaryTree(nums,0,rootIndex-1);
-        root.right = ConstructMaximumBinaryTree(nums,rootIndex+1,nums.Length-1);
-        return root;
-    }
-
-    public TreeNode ConstructMaximumBinaryTree(int[] nums, int start, int end)
+    public TreeNode ConstructMaximumBinaryTree(int[] nums)
     {
-        if (start > end)
+        return Construct(nums, 0, nums.Length - 1);
+    }
+    public TreeNode Construct(int[] nums, int left, int right)
+    {
+        if (left == right)
         {
-            return null;
+            return new TreeNode(nums[left]);
         }
-        var root = new TreeNode(nums.Skip(start).Take(end-start+1).Max());
-        var rootIndex = Array.IndexOf(nums, root.val);
-        root.left = ConstructMaximumBinaryTree(nums,start,rootIndex-1);
-        root.right = ConstructMaximumBinaryTree(nums,rootIndex+1,end);
-        return root;
+        int mid = (left + right) / 2;
+
+        return Merge(
+            Construct(nums, left, mid),
+            Construct(nums, mid + 1, right)
+        );
+    }
+    public TreeNode Merge(TreeNode leftTree, TreeNode rightTree)
+    {
+        if (leftTree == null)
+        {
+            return rightTree;
+        }
+        if (rightTree == null)
+        {
+            return leftTree;
+        }
+        if (leftTree.val > rightTree.val)
+        {
+            leftTree.right = Merge(leftTree.right, rightTree);
+            return leftTree;
+        }
+        else
+        {
+            rightTree.left = Merge(leftTree, rightTree.left);
+            return rightTree;
+        }
     }
 }
